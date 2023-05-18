@@ -30,8 +30,8 @@ const plugin = function (options = {}) {
     'width', 'height', 'margin', 'margin-left', 'margin-right', 'margin-bottom', 'margin-top',
     'padding', 'padding-top', 'padding-left', 'padding-bottom', 'padding-right', 'line-height',
     'left', 'right', 'bottom', 'top', 'max-height', 'min-height', 'text-indent', 'border-radius',
-    'background-size', 'letter-spacing', 'grid-template', 'grid-template-columns', 'grid-template-rows', 
-    'row-gap', 'gap', 'column-gap', 'grid'
+    'background-size', 'background-position', 'letter-spacing', 'grid-template', 'grid-template-columns', 
+    'grid-template-rows', 'row-gap', 'gap', 'column-gap', 'grid'
   ].concat(expand)
   let useNames = names.map(name => '[^a-z\\-]' + name).join('|');
   const sizeReg = new RegExp(`(?<=${useNames}):(.+?)(?=;)`, 'g');
