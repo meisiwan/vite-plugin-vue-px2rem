@@ -36,7 +36,7 @@ const plugin = function (options = {}) {
   let useNames = names.map(name => '[^a-z\\-]' + name).join('|');
   const sizeReg = new RegExp(`(?<=${useNames}):(.+?)(?=;)`, 'g');
   //字体 边框
-  let _names = ['font-size', 'border', 'border-left', 'border-top', 'border-right', 'border-bottom']
+  let _names = ['font','font-size', 'border', 'border-left', 'border-top', 'border-right', 'border-bottom']
   _names = _names.map(name => '[^a-z\\-]' + name).join('|');
   const fontReg = new RegExp(`(?<=${_names}):\\s*?(\\d+)px`, 'g');
   //css变量
