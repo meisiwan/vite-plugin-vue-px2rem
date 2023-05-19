@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-vue-px2rem",
-  "version": "1.0.29",
+  "version": "1.0.30",
   "description": "",
   "main": "index.cjs",
   "module": "index.mjs",
