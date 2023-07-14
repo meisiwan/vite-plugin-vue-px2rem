@@ -10,7 +10,15 @@ const _px2rem = function (size) {
   }
 
   dpr = window.devicePixelRatio || 1;
-  rem = (docEl.clientWidth / size) * dpr;
+
+  var clientWidth = docEl.clientWidth;
+  if(clientWidth > 768){
+    clientWidth = 375
+    docEl.style.width = '375px';
+    docEl.style.height = '667px';
+    docEl.style.margin = '0 auto';
+  }
+  rem = (clientWidth / size) * dpr;
   scale = 1 / dpr;
 
   //设置viewport,进行缩放，达到高清效果
