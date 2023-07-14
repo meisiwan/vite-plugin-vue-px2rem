@@ -14,8 +14,8 @@ const _px2rem = function (size, pcMobile) {
   var clientWidth = docEl.clientWidth;
   if(clientWidth > 768 && pcMobile){
     clientWidth = 375
-    docEl.style.width = '375px';
-    docEl.style.height = '667px';
+    docEl.style.width = '375rem';
+    docEl.style.height = '667rem';
     docEl.style.margin = '0 auto';
   }
   rem = (clientWidth / size) * dpr;
