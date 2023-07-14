@@ -4,6 +4,7 @@ import {  Plugin } from 'vite';
 interface Options {
     size?: number;
     expand?: string[];
+    pcMobile?: boolean;
 }
 
 declare function vuePlugin(rawOptions?: Options): Plugin;
