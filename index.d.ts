@@ -5,6 +5,7 @@ interface Options {
     size?: number;
     expand?: string[];
     pcMobile?: boolean;
+    height?: number;
 }
 
 declare function vuePlugin(rawOptions?: Options): Plugin;
