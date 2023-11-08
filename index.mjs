@@ -1,4 +1,4 @@
-const _px2rem = function (size, pcMobile, height, scale) {
+const _px2rem = function (size, pcMobile, height, scale, _dpr) {
   var dpr, rem, scale;
   var docEl = document.documentElement;
   var fontEl = document.createElement('style');
@@ -9,7 +9,7 @@ const _px2rem = function (size, pcMobile, height, scale) {
     docEl.firstElementChild.appendChild(metaEl);
   }
 
-  dpr = window.devicePixelRatio || 1;
+  dpr = _dpr || window.devicePixelRatio || 1;
   
   var clientWidth = docEl.clientWidth;
   if(clientWidth > 768 && pcMobile){
@@ -34,7 +34,7 @@ const _px2rem = function (size, pcMobile, height, scale) {
 
 
 const plugin = function (options = {}) {
-  const { size = 375, expand = [], pcMobile, height = '80%', scale = 1 } = options;
+  const { size = 375, expand = [], pcMobile, height = '80%', scale = 1, dpr } = options;
   //大小相关的css属性
   let names = [
     'width', 'height', 'margin', 'margin-left', 'margin-right', 'margin-bottom', 'margin-top',
@@ -60,7 +60,7 @@ const plugin = function (options = {}) {
       if (/src\/main\.(ts|js)$/.test(id)) {
         return {
           code: `import {_px2rem} from 'vite-plugin-vue-px2rem'; 
-          _px2rem(${size}, ${pcMobile?'true' : 'false'}, '${height}', ${scale}); 
+          _px2rem(${size}, ${pcMobile?'true' : 'false'}, '${height}', ${scale}, ${dpr}); 
           ${code};`,
         };
       }
