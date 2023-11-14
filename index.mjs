@@ -11,7 +11,7 @@ const _px2rem = function (size, pcMobile, height, scale, _dpr) {
 
   dpr = _dpr || window.devicePixelRatio || 1;
   
-  var clientWidth = docEl.clientWidth;
+  var clientWidth = docEl.clientWidth || document.body.clientWidth || window.innerWidth;
   if(clientWidth > 768 && pcMobile){
     clientWidth = size
     docEl.style.margin = '0 auto';
